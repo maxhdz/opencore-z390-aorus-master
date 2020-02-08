@@ -1,4 +1,4 @@
-# RESOURCES
+# Resources
 
 ## DOWNLOADS
 
@@ -13,14 +13,14 @@
 
 ## VERSIONS USED AT TIME OF WRITING
 
-- OpenCore 0.5.5 DEBUG
-- AppleSupportPkg 2.1.5 RELEASE (`ApfsDriverLoader.efi` & `VBoxHfs.efi`)
-- VirtualSMC 1.1.1 RELEASE (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)
-- Lilu 1.4.1 RELEASE
-- WhateverGreen 1.3.6 RELEASE
-- IntelMausiEthernet [RehabMan v2-2018-1031](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/) RELEASE
-- AppleALC 1.4.6 RELEASE
-- NVMeFix 1.0.1 RELEASE
+- OpenCore **0.5.5 DEBUG**
+- AppleSupportPkg **2.1.5 RELEASE** (`ApfsDriverLoader.efi` & `VBoxHfs.efi`)
+- VirtualSMC **1.1.1 RELEASE** (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)
+- Lilu **1.4.1 RELEASE**
+- WhateverGreen **1.3.6 RELEASE**
+- IntelMausi **1.0.2 RELEASE**
+- AppleALC **1.4.6 RELEASE**
+- NVMeFix **1.0.1 RELEASE**
 - custom USBMap.kext created by [cmer](https://github.com/cmer)
 
 ## REFERENCE / READING

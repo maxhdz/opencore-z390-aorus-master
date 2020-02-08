@@ -1,6 +1,6 @@
-# BIOS CONFIG
+# BIOS config
 
-Before you start, make sure to upgrade your BIOS to the latest version (F11c) and **Load Optimized Defaults**.
+Before you start, make sure to upgrade your BIOS to the latest version (**F11c**) and **Load Optimized Defaults**.
 
 ## DISABLE
 
@@ -35,8 +35,6 @@ Before you start, make sure to upgrade your BIOS to the latest version (F11c) an
 # Overclocking
 
 These are the additional settings used by the original guide author to overclock the CPU to 5.1GHz.
-
-![Geekbench](images/geekbench.png)
 
 ## M.I.T
 

@@ -1,6 +1,6 @@
-# USB Port Map
+# Mapping USB ports
 
-Here's the USB port map for the Gigabyte Aorus z390 Master I have discovered using the great [USBMap script](https://github.com/corpnewt/USBMap).
+Here's the USB port map for the Gigabyte AORUS Z390 MASTER that the original author discovered using [USBMap script](https://github.com/corpnewt/USBMap).
 
  * **HS01/SS01:** Front USB-C
  * **HS02/SS02:** Unknown
@@ -19,8 +19,8 @@ Here's the USB port map for the Gigabyte Aorus z390 Master I have discovered usi
  * **USR1:** Unknown
  * **USR2:** Unknown
 
- 
-## Ports I kept enabled:
+## Ports kept enabled:
+
  * HS03/SS03
  * HS04/SS04
  * HS05/SS05
@@ -30,19 +30,19 @@ Here's the USB port map for the Gigabyte Aorus z390 Master I have discovered usi
  * HS11
  * HS12
  * HS13
- 
+
 **Total:** 15 ports
 
-Or in other words, I disabled:
+Disabled:
+
  * both yellow USB3 ports next to the HDMI port
  * the Front USB-C header
  * HS2 (unknown)
- * Bluetooth/Wifi
+ * BT/WiFi
  * USR1/USR2 (unknown)
 
 ## USB.plist
 
-I have included the [`USB.plist`](assets/USB.plist) file I generated with USBMap. This is specific to the Gigabyte Aorus z390 Master board and will NOT work with similar boards (such as the Elite or Pro). Each port is named to make things a bit easier.
+The author included the [`USB.plist`](assets/USB.plist) file generated with USBMap. This is specific to the Gigabyte AORUS Z390 MASTER board and will NOT work with similar boards (such as the Elite or Pro). Each port is named to make things a bit easier.
 
-In order to use my USB map, just copy the included `USB.plist` to `USBMap/Scripts`. By using my USB map, you will not spend time discovering your ports.
-
+In order to use the USB map, just copy the included `USB.plist` to `USBMap/Scripts`. By using it, you will not spend time discovering ports.
