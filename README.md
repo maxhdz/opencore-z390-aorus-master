@@ -29,13 +29,14 @@ See the [hardware list.](HARDWARE.md)
 - AirPlay
 - Continuity
 - Apple Music (iTunes)
-- DRM-protected videos in TV app
 - Power Nap
 
 #### NOT WORKING
 
-- Built-in WiFi. This will likely never work since it is the new Intel CNVi that MacOS doesn't support.
-- Onboard Bluetooth is hit or miss. However, I disabled it (HS14) because I have a natively supported Broadcom BCM94360CS2 WIFI/BT adapter.
+- Built-in WiFi. This will likely never work.
+- Onboard BT is disabled (HS14 in the USB map).
+
+Please use an add-in card for these.
 
 #### WON'T TEST
 

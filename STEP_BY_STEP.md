@@ -4,31 +4,13 @@ The following steps assume you will be installing macOS Catalina.
 
 ## SETUP UEFI/BIOS
 
+* Update the BIOS to the latest version (as of this writing, F11c)
 * Load Optimized Default Settings
-* Peripherals → USB Configuration → XHCI Hand-off : Enabled
-* Chipset → Internal Graphics : Enabled (important for Quicklook/Preview and hardware acceleration)
-    - Please note that we will be using our internal GPU in **headless** mode only and this guide assumes that. This is how an iMac19,1 (what we're basing our build on) behaves.
-    - I seriously recommend enabling the iGPU. However, if you can't boot and get the error message "Unable to allocate runtime area", you will need to disable the iGPU. Unfortunately, I had to disable it myself.
-    - ~~If you opt to disable Internal Graphics with Mojave, you will need to use `NoVPAJpeg.kext` to have proper decoding. It is **not** needed under Catalina. If you have iGPU enabled in Mojave, it is not required and should not be used.~~
-    - `NoVPAJpeg.kext` is now deprecated. Use the following boot args instead: `shikigva=32 shiki-id=Mac-7BA5B2D9E42DDD94`
+* Go through [BIOS SETTINGS](BIOS_SETTINGS.md) and make all the changes listed.
 
+## CREATING THE USB FLASH DRIVE
 
-You may want to take a look at my [BIOS Settings & Overclocking](BIOS_SETTINGS.md).
-
-## Utilities You'll Need
-
-These are all Mac utilities. Therefore, you need access to a real Mac.
-
-* [Clover Installer](https://github.com/Dids/clover-builder/releases)
-* [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/)
-
-
-## Creating a Bootable USB Installation Drive
-
-Follow the following instructions:
-
-* [Building the USB Installer](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/building-the-usb-installer)
-* [Clover Setup](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup)
+Follow the [OpenCore Vanilla guide](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide/installer-guide/opencore-efi.html). It outlines instructions that can be followed in both macOS and Windows.
 
 ## Configuring Clover
 
@@ -59,28 +41,6 @@ Here's a [great explanation of the Clover settings for Coffee Lake](https://hack
         - `alcid=16` -- this enables your onboard audio. Use `-alcoff` to disable audio.
         - `-v` -- boot in verbose mode. I personally remove this after my system is stable.
 
-* In **ACPI**:
-    - Click `List of Patches` and enable the following:
-        + `change SAT0 to SATA`
-        + `change HECI to IMEI`
-    - In the `Fixes` section, check only the following (careful, there are 2 screens). NOTE: my system works just fine without any fixes.
-        + `FixRTC` -- try if your system hangs at boot time
-        + `FixShutdown` -- only use if you are having shutdown issues (ie: restarts instead of shutdown)
-    - In `Drop Tables`, make sure you have `DMAR` and `MATS`.
-
-* In **Devices**:
-    - In the `USB` section, check `Inject`, `FixOwnership` and `HighCurrent`.
-    - In the `Audio` section, set `Inject` to `No` and uncheck `AFGLowPowerState` and `ResetHDA`.
-    - If you have enabled your iGPU (otherwise not required), click `Properties`, select `PciRoot(0x0)/Pci(0x2,0x0)`. Then, click the + button to add a property.
-      - Add (or update if already present):
-          + Property Key: `AAPL,ig-platform-id`
-          + Property Value: `0300923E` -- iGPU in compute mode
-          + Value Type: `DATA`
-
-* In **Kernel and Kext Patches**
-    - Remove all patches except `AppleAHCIPort`
-
-* Click the Export Configuration button (bottom left), then Save As `config.plist`.
 * Copy your newly generated `config.plist` to `/EFI/CLOVER/` on your bootable USB key.
 
 ## Kexts

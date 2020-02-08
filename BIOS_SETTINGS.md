@@ -1,8 +1,30 @@
-# BIOS Settings
-
-Here are the minimum BIOS settings you'll need for a fully functional macOS Catalina setup.
+# BIOS CONFIG
 
 Before you start, make sure to upgrade your BIOS to the latest version (F11c) and **Load Optimized Defaults**.
+
+## DISABLE
+
+- Fast Boot
+- VT-d (can be enabled if you set `DisableIoMapper` to YES)
+- CSM
+- Thunderbolt
+- Intel SGX
+- Intel Platform Trust
+- CFG Lock (MSR 0xE2 write protection)
+- Serial Port
+- Parallel Port
+- LED lighting
+- Legacy USB
+
+## ENABLE
+
+- VT-x
+- Above 4G decoding
+- Hyper-Threading
+- Execute Disable Bit
+- EHCI/XHCI Hand-off
+- OS type: Windows 8.1/10 UEFI Mode
+- Legacy RTC Device
 
 ## M.I.T
 
@@ -10,25 +32,9 @@ Before you start, make sure to upgrade your BIOS to the latest version (F11c) an
 
 * Extreme Memory Profile (XMP): Profile1
 
-## Peripherals
-
-### Super IO Configuration
-
-* Serial Port: Disabled
-
-### USB Configuration
-
-* XHCI Hand-off: Enabled
-
-## Chipset
-
-* Internal Graphics: Disabled
-
-
-
 # Overclocking
 
-These are the additional settings I used to overclock my i9 9900k to 5.1GHz.
+These are the additional settings used by the original guide author to overclock the CPU to 5.1GHz.
 
 ![Geekbench](images/geekbench.png)
 
