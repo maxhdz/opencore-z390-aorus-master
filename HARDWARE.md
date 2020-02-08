@@ -1,14 +1,14 @@
-# My Hackintosh Hardware
+# HARDWARE USED
+## Fully based on [this build.](https://infinitediaries.net/my-2020-hackintosh-hardware-spec/)
 
-- Gigabyte Z390 Aorus Master (bios F8)
-- Intel i9 9900k (@ 5.1 GHz)
-- 64GB G.Skill Trident RGB 3200MHz
-- 1 x Sapphire Nitro+ RX580 8GB (primary)
-- 1 x Sapphire Nitro+ RX570 4GB (secondary)
-- 1 x Samsung 970 EVO NVMe M.2 250GB (Windows 10)
-- 1 x Samsung 970 EVO NVMe M.2 1TB (Mojave Installation)
-- 1 x XPG SX8200 NVMe M.2 1TB (Mojave Backup Installation)
-- 1 x Broadcom BCM94360CS2 PCIe card (Bluetooth + Wi-Fi)
-- 1 x Syba PCIe AQTION AQC107 10Gbps NIC
+- Fractal Design Meshify C case
+- Seasonic Prime Ultra Platinum 1000W PSU
+- Noctua NH-D15 (CPU cooler)
+- 3x Noctua NF-14 PWM Chromax 140 mm (2x intake on the front, 1x back top)
+- 1x Noctua NF-S12A PWM Chromax 120 mm (case rear)
 
-All my hardware is supported natively and did not require any additional configuration or KEXT.
+- Gigabyte Z390 Aorus Master (BIOS F11c)
+- Intel Core i9-9900K (@ 5.1 GHz)
+- 64GB Kingston HyperX Fury DDR4 CL16 3200MHz
+- Samsung 970 EVO Plus NVMe M.2 1TB
+- fenvi T919 (BCM94360CD) WiFi & BT 4.0

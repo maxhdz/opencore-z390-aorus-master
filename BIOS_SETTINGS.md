@@ -1,8 +1,8 @@
 # BIOS Settings
 
-Here are the minimum BIOS settings you'll need for a fully functional macOS Mojave/Catalina setup.
+Here are the minimum BIOS settings you'll need for a fully functional macOS Catalina setup.
 
-Before you start, make sure to upgrade your BIOS to the latest version (I use F8) and **Load Optimized Defaults**.
+Before you start, make sure to upgrade your BIOS to the latest version (F11c) and **Load Optimized Defaults**.
 
 ## M.I.T
 

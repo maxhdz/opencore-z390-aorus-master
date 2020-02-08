@@ -25,7 +25,7 @@ Good thread where the author documents his many experiments, failures and succes
 
 ##### [A great Kext repo](https://1drv.ms/f/s!AiP7m5LaOED-m-J8-MLJGnOgAqnjGw)
 
-
+https://infinitediaries.net/my-2020-hackintosh-hardware-spec/
 
 ### Misc
 

@@ -1,18 +1,17 @@
-# Hackintosh Catalina Installation Guide for Gigabyte Z390 Aorus Master
+# OpenCore Catalina Installation Guide for Gigabyte Z390 Aorus Master
 
-This build is "Vanilla". I used [this guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) as a starting point.
+This is a vanilla build using [this blog post](https://infinitediaries.net/my-2020-hackintosh-hardware-spec/) as a hardware reference and following the [OpenCore guide.](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide)
 
-I assume you are installing Catalina, although most of the instructions also apply for Mojave.
+I've forked this repo in order to contribute a guide back and to have a reference for myself.
 
-### Hardware
+### HARDWARE
 
-See my [Hardware List](HARDWARE.md)
+See the [hardware list.](HARDWARE.md)
 
 ![About My Mac](images/about.png)
 
-### What's Working/What's Not
+##### WORKING
 
-##### Working
 - Ethernet
 - Onboard Audio (including digital audio)
 - APFS
@@ -29,31 +28,29 @@ See my [Hardware List](HARDWARE.md)
 - AirPlay
 - Continuity
 - Apple Music (iTunes)
-- DRM-protected videos in TV app (not working in Mojave)
+- DRM-protected videos in TV app
 - Power Nap
 
+##### NOT WORKING
 
-##### Not Working
-- Built-in wifi. This will likely never work since it is the new Intel CNVi that MacOS doesn't support.
+- Built-in WiFi. This will likely never work since it is the new Intel CNVi that MacOS doesn't support.
 - Onboard Bluetooth is hit or miss. However, I disabled it (HS14) because I have a natively supported Broadcom BCM94360CS2 WIFI/BT adapter.
-- Netflix DRM in Safari (works in Chrome)
 
+##### WON'T TEST
 
-##### Not Yet Tested
 - FileVault
 
-
-### Step By Step Instructions
+### STEP BY STEP INSTRUCTIONS
 
 See [STEP_BY_STEP.md](STEP_BY_STEP.md)
 
-### USB Port Map & SSDT
+### USB PORT MAP & SSDT
 
-See [USB_MAP.md](USB_MAP.md) for a map of all the ports on the Aorus z390 Master.
+See [USB_MAP.md](USB_MAP.md) for a map of all the ports on the Aorus Z390 Master.
 
-### The Lazy Way
+### LAZY WAY
 
-You are welcome to use my config.plist and kexts. However, make sure you set the following:
+You are welcome to use my setup in its entirety, but set the following values in `config.plist` before:
 
 - SerialNumber
 - BoardSerialNumber
