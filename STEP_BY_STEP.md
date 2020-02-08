@@ -1,11 +1,8 @@
-# Step by Step Instructions Hackintoshing
+# Step by step instructions
 
-These are step by step instructions for a Vanilla install of MacOS Mojave/Catalina on a Gigabyte Aorus Master Z390 with an Intel i9 9900k CPU.
+The following steps assume you will be installing macOS Catalina.
 
-This guide assumes that you are installing Mojave 10.14.5 or over, or Catalina.
-
-
-## Setup UEFI/BIOS
+## SETUP UEFI/BIOS
 
 * Load Optimized Default Settings
 * Peripherals → USB Configuration → XHCI Hand-off : Enabled
