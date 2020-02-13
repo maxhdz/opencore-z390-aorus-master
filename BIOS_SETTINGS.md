@@ -1,71 +1,48 @@
 # BIOS config
 
-Before you start, make sure to upgrade your BIOS to the latest version (**F11c**) and **Load Optimized Defaults**.
+Before you start, make sure to upgrade your BIOS to the latest version (**F11c**), **Load Optimized Defaults** and disable CFG Lock for later.
 
-## DISABLE
+## Tweaker
+- Advanced CPU Settings  
+-- Hyper-Threading Technology - Enabled  
+-- VT-d - Disabled  
 
-- Fast Boot
-- VT-d (can be enabled if you set `DisableIoMapper` to YES)
-- CSM
-- Thunderbolt
-- Intel SGX
-- Intel Platform Trust
-- CFG Lock (MSR 0xE2 write protection)
-- Serial Port
-- Parallel Port
-- LED lighting
-- Legacy USB
+- Extreme Memory Profile - Profile 1
 
-## ENABLE
+## Settings
+- Platform Power  
+-- Platform Power Management - Disabled  
+-- ErP - Enabled  
 
-- VT-x
-- Above 4G decoding
-- Hyper-Threading
-- Execute Disable Bit
-- EHCI/XHCI Hand-off
-- OS type: Windows 8.1/10 UEFI Mode
-- Legacy RTC Device
+- IO Ports  
+-- Initial Display Output - IGFX  
+-- Internal Graphics - Enabled  
+-- DVMT Pre-allocated - 64M  
+-- DVMT Total Gfx Mem - MAX  
+-- WiFi - Disabled  
+-- Above 4G Decoding - Enabled  
+-- USB Configuration  
+--- Legacy USB Support - Disabled  
+--- XHCI Hand-off - Enabled  
+--- Port 60/64 Emulation - Disabled  
+-- Network Stack Configuration  
+--- Network Stack - Disabled  
 
-## M.I.T
+- Miscellaneous  
+-- LEDs in Power On - Off  
+-- LEDs in Power Off - Off  
+-- Intel Platform Trust Technology - Disabled  
+-- Software Guard Extensions - Disabled  
+-- Trusted Computing  
+--- Security Device Support - Disable  
 
-### Advanced Frequency Settings
+## Boot
+- Fast Boot - Disabled  
+- Windows 8/10 Features - Windows 8/10  
+- CSM Support - Disabled  
+- Secure Boot  
+-- Secure Boot Enable - Disabled  
 
-* Extreme Memory Profile (XMP): Profile1
+# OVERCLOCK
 
-# Overclocking
-
-These are the additional settings used by the original guide author to overclock the CPU to 5.1GHz.
-
-## M.I.T
-
-### Advanced Frequency Settings
-
-* CPU Clock Ratio: 51
-* Extreme Memory Profile (XMP): Profile1
-
-#### Advanced CPU Core Settings
-* Uncore Ratio: 47
-* Package Power Limit1 - TDP (Watts): 4090
-* Package Power Limit2 (Watts): 4090
-* Platform Power Limit1 (Watts): 4090
-* Platform Power Limit2 (Watts): 4090
-* CPU Enhanced Halt (C1E): Disabled
-* C3 State Support: Disabled
-* C6/C7 State Support: Disabled
-* C8 State Support: Disabled
-* C10 State Support: Disabled
-
-### Advanced Memory Settings
-  * Extreme Memory Profile (XMP): Profile1
-
-### Advanced Voltage Settings
-
-#### Advanced Power Settings
-* CPU Internal AC/DC Load Line: Turbo
-* CPU Vcore Loadline Calibration: Turbo
-* VAXG Loadline Calibration: Turbo
-* CPU Vcore Current Protection: Turbo
-* VAXG Current Protection: Turbo
-
-#### CPU Core Voltage Control
-* CPU Vcore: 1.370V
+Will be completed at a later time.

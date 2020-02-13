@@ -1,6 +1,6 @@
 # Mapping USB ports
 
-Here's the USB port map for the Gigabyte AORUS Z390 MASTER that the original author discovered using [USBMap script](https://github.com/corpnewt/USBMap).
+Here's the USB port map for the Gigabyte AORUS Z390 MASTER that the original author **cmer** discovered using [USBMap script](https://github.com/corpnewt/USBMap).
 
  * **HS01/SS01:** Front USB-C
  * **HS02/SS02:** Unknown
