@@ -9,6 +9,8 @@ I've forked [this repo](https://github.com/cmer/gigabyte-z390-aorus-master-hacki
 
 **WORKING**. Please read through for details.
 
+In the future I will add a dGPU and will update all files accordingly.
+
 ## HARDWARE
 
 See the [hardware list.](HARDWARE.md)

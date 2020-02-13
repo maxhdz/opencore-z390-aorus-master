@@ -45,4 +45,4 @@ Before you start, make sure to upgrade your BIOS to the latest version (**F11c**
 
 # OVERCLOCK
 
-Will be completed at a later time.
+I followed [this guide](https://forums.bit-tech.net/index.php?threads/9900k-5ghz-1-2v-guide-gigabyte-z390-master.353729/) to reach 5GHz. Still testing for longer-term stability.

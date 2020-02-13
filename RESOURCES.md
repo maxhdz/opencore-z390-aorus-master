@@ -29,7 +29,7 @@
 ##### [Getting Started with ACPI](https://khronokernel.github.io/Getting-Started-With-ACPI/)  
 ##### [CaseySJ's Designare Z390 build, similar and praised by the community for its detailed write-up.](https://www.tonymacx86.com/threads/success-gigabyte-designare-z390-thunderbolt-3-i7-9700k-amd-rx-580.267551/)  
 ##### [Improving Sleep on a Hackintosh](https://hackintosher.com/forums/thread/improving-sleep-on-a-hackintosh-wakeup-freezes-black-screens.486/)  
-  
+##### [Quality of life improvement - complete bootable backups with CCC](https://www.tonymacx86.com/threads/success-gigabyte-designare-z390-thunderbolt-3-i7-9700k-amd-rx-580.267551/page-881#post-2018772)  
   
 ##### [SUCCESS - blouse's "Hack Pro" build: i9 9900k + Z390 Aorus Pro + dual Vega 64's @ tonymacx86.com](https://www.tonymacx86.com/threads/success-blouses-hack-pro-build-i9-9900k-z390-aorus-pro-dual-vega-64s.264948)  
 ##### [How to create custom SSDT-UIAC - Guide](https://hackintosher.com/forums/thread/improving-sleep-on-a-hackintosh-wakeup-freezes-black-screens.486/#post-3034)  

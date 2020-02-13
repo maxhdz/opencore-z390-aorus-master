@@ -11,3 +11,9 @@
 - 64GB Kingston HyperX Fury DDR4 CL16 3200MHz  
 - Samsung 970 EVO Plus NVMe M.2 1TB  
 - fenvi T919 (BCM94360CD) WiFi & BT 4.0  
+
+## TIPS
+
+- I recommend the case coolers be mounted first. Try to picture the layout of the motherboard and how you would connect the coolers to it.
+- If using the same case, try to think in advance how to route the PSU cables, since it sits at the bottom.
+- I would also add the CPU heatsink / cooler as the very last step.
