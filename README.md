@@ -50,11 +50,11 @@ Please use an add-in card for these.
 ### WON'T TEST
 
 - FileVault
-- Sleep
+- Sleep (has been reported working on r/Hackintosh)
 
 ## STEP BY STEP INSTRUCTIONS
 
-The following assume you will be installing macOS Catalina.
+The following assume you will be installing macOS Catalina 10.15.3, but should be compatible with 10.15.4.
 
 ### SETUP UEFI/BIOS
 
@@ -107,7 +107,7 @@ The following assume you will be installing macOS Catalina.
 
 ### OVERCLOCK?
 
-I followed [this guide](https://forums.bit-tech.net/index.php?threads/9900k-5ghz-1-2v-guide-gigabyte-z390-master.353729/) to reach 5GHz. Still testing for longer-term stability.
+I followed [this guide](https://forums.bit-tech.net/index.php?threads/9900k-5ghz-1-2v-guide-gigabyte-z390-master.353729/) to reach 5GHz and can recommend these tweaks.
 
 ### CREATING THE INSTALLER
 
@@ -136,14 +136,13 @@ The only change needed with the `EFI` files is to add SMBIOS information to the 
 
 #### VERSIONS USED AT TIME OF WRITING
 
-- OpenCore **0.5.5 DEBUG**
-- AppleSupportPkg **2.1.5 RELEASE** (`ApfsDriverLoader.efi` & `VBoxHfs.efi`)
-- VirtualSMC **1.1.1 RELEASE** (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)
-- Lilu **1.4.1 RELEASE**
-- WhateverGreen **1.3.6 RELEASE**
+- OpenCore w/ OpenCanopy **0.5.7 RELEASE**
+- AppleSupportPkg **2.1.6 RELEASE** (`ApfsDriverLoader.efi`)
+- VirtualSMC **1.1.2 RELEASE** (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)
+- Lilu **1.4.3 RELEASE**
+- WhateverGreen **1.3.8 RELEASE**
 - IntelMausi **1.0.2 RELEASE**
-- AppleALC **1.4.6 RELEASE**
-- NVMeFix **1.0.1 RELEASE**
+- AppleALC **1.4.8 RELEASE**
 - custom USBMap.kext created by [cmer](https://github.com/cmer)
 
 ## USB PORT MAP & SSDT
