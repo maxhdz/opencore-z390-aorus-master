@@ -1,7 +1,7 @@
 # OpenCore-based macOS Catalina Guide
 ## Gigabyte Z390 Aorus Master / Intel Core i9-9900K
 
-This is a vanilla build using [this blog post](https://infinitediaries.net/my-2020-hackintosh-hardware-spec/) as a hardware reference and following the [OpenCore guide.](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide)
+This is a vanilla build using [this blog post](https://infinitediaries.net/my-2020-hackintosh-hardware-spec/) as a hardware reference and following the [OpenCore guide.](https://desktop.dortania.ml/)
 
 I've forked [cmer's Clover guide](https://github.com/cmer/gigabyte-z390-aorus-master-hackintosh) in order to contribute a guide back and to have a reference for myself. All the thanks in the world to **cmer** for his work and for the USBMap. It has saved me a ton of time!
 
@@ -11,7 +11,7 @@ I've forked [cmer's Clover guide](https://github.com/cmer/gigabyte-z390-aorus-ma
 
 Please read through for details.
 
-In the future I will add a dGPU and will update all files accordingly.
+In the future I will add a dGPU and will update all files accordingly, keeping both config resources.
 
 ## HARDWARE
 
@@ -59,7 +59,7 @@ The following assume you will be installing macOS Catalina 10.15.3, but should b
 ### SETUP UEFI/BIOS
 
 * Update the BIOS to the latest version (as of this writing, **F11c**).
-* Follow [this guide](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/extras/msr-lock) to unlock CFG Lock.
+* Follow [this guide](https://desktop.dortania.ml/extras/msr-lock.html) to unlock CFG Lock.
 * In the BIOS, first *Load Optimized Default Settings*
 * Go through the following and make the same changes:
 
@@ -105,13 +105,13 @@ The following assume you will be installing macOS Catalina 10.15.3, but should b
 
 * Save & Exit Setup.
 
-### OVERCLOCK?
+### OVERCLOCK
 
 I followed [this guide](https://forums.bit-tech.net/index.php?threads/9900k-5ghz-1-2v-guide-gigabyte-z390-master.353729/) to reach 5GHz and can recommend these tweaks.
 
 ### CREATING THE INSTALLER
 
-Follow the [OpenCore Vanilla guide](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide/installer-guide/opencore-efi.html). It has instructions that can be followed in both macOS and Windows.
+Follow the [OpenCore Vanilla guide](https://desktop.dortania.ml/installer-guide/opencore-efi.html). It has instructions that can be followed in both macOS and Windows.
 
 ### CONFIGURING OPENCORE
 
@@ -123,7 +123,7 @@ Follow the [OpenCore Vanilla guide](https://khronokernel.github.io/Opencore-Vani
 4. After install, mount the internal disk's EFI partition.
 5. Dump the same contents there.
 
-If your setup is identical to mine, odds are you won't need to mess with KALSR slide values, as the one in `config.plist` will work. If boot stops with an error like `Couldn't allocate runtime area`, [please follow this guide](https://khronokernel-2.gitbook.io/opencore-vanilla-desktop-guide/extras/kalsr-fix) to understand what you need to do.
+If your setup is identical to mine, odds are you won't need to mess with KALSR slide values, as the one in `config.plist` will work. If boot stops with an error like `Couldn't allocate runtime area`, [please follow this guide](https://desktop.dortania.ml/extras/kaslr-fix.html) to understand what you need to do.
 
 If the iGPU isn't outputting anything, you may need to follow Headkaze's [Intel Framebuffer Patching Guide](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). It took me 14 reboots until I found the right combo, so don't stress.
 
@@ -131,8 +131,8 @@ The only change needed with the `EFI` files is to add SMBIOS information to the 
 
 #### HARD WAY
 
-1. Read through the [OpenCore Vanilla Desktop Guide.](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide/)
-2. Read through [this guide](https://khronokernel.github.io/Getting-Started-With-ACPI/) to understand how to patch your SSDTs.
+1. Read through the [OpenCore Vanilla Desktop Guide](https://desktop.dortania.ml/) in its entirety.
+2. Read through [this guide](https://acpi.dortania.ml/) to understand how to patch your SSDTs.
 
 #### VERSIONS USED AT TIME OF WRITING
 
@@ -143,7 +143,7 @@ The only change needed with the `EFI` files is to add SMBIOS information to the 
 - WhateverGreen **1.3.8 RELEASE**
 - IntelMausi **1.0.2 RELEASE**
 - AppleALC **1.4.8 RELEASE**
-- custom USBMap.kext created by [cmer](https://github.com/cmer)
+- custom USBPorts.kext, a mix of [AudioGod's](https://www.insanelymac.com/forum/topic/340936-audiogods-aorus-z390-master-patched-dsdt-efi-for-catalina-mini-guide-and-discussion/) work and [cmer's](https://github.com/cmer) mapping.
 
 ## USB PORT MAP & SSDT
 

@@ -13,8 +13,8 @@
 
 ## REFERENCE / READING
 
-- [OpenCore Vanilla Guide](https://khronokernel.github.io/Opencore-Vanilla-Desktop-Guide)  
-- [Getting Started with ACPI](https://khronokernel.github.io/Getting-Started-With-ACPI/)  
+- [OpenCore Vanilla Guide](https://desktop.dortania.ml/)  
+- [Getting Started with ACPI](https://acpi.dortania.ml/)  
 - [AudioGod's Aorus Z390 Master Thread](https://www.insanelymac.com/forum/topic/340936-audiogods-aorus-z390-master-patched-dsdt-efi-for-catalina-mini-guide-and-discussion/)  
 - [Improving Sleep on a Hackintosh](https://hackintosher.com/forums/thread/improving-sleep-on-a-hackintosh-wakeup-freezes-black-screens.486/)  
 - [Quality of life improvement - complete bootable backups with CCC](https://www.tonymacx86.com/threads/success-gigabyte-designare-z390-thunderbolt-3-i7-9700k-amd-rx-580.267551/page-881#post-2018772)  

@@ -43,6 +43,6 @@ Disabled:
 
 ## USB.plist
 
-The author included the [`USB.plist`](assets/USB.plist) file generated with USBMap. This is specific to the Gigabyte AORUS Z390 MASTER board and will NOT work with similar boards (such as the Elite or Pro). Each port is named to make things a bit easier.
+The author included the [`USB.plist`](assets/USB.plist) file generated with USBMap. This is specific to the Gigabyte Aorus Z390 Master board and will NOT work with similar boards (such as the Elite or Pro). Each port is named to make things a bit easier.
 
 In order to use the USB map, just copy the included `USB.plist` to `USBMap/Scripts`. By using it, you will not spend time discovering ports.
