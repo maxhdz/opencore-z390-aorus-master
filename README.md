@@ -7,11 +7,7 @@ I've forked [cmer's Clover guide](https://github.com/cmer/gigabyte-z390-aorus-ma
 
 ## STATUS
 
-**WORKING** 
-
-Please read through for details.
-
-In the future I will add a dGPU and will update all files accordingly, keeping both config resources.
+Fully working.
 
 ## HARDWARE
 
@@ -23,7 +19,8 @@ In the future I will add a dGPU and will update all files accordingly, keeping b
 - Gigabyte Z390 Aorus Master (BIOS F11c)  
 - Intel Core i9-9900K  
 - 64GB Kingston HyperX Fury DDR4 CL16 3200MHz  
-- Samsung 970 EVO Plus NVMe M.2 1TB  
+- Gigabyte Aorus 5700XT Gaming 8GB
+- Samsung 970 EVO Plus NVMe M.2 1TB & 500GB  
 - fenvi T919 (BCM94360CD) WiFi & BT 4.0  
 
 ### ASSEMBLY TIPS
@@ -54,12 +51,11 @@ Please use an add-in card for these.
 
 ## STEP BY STEP INSTRUCTIONS
 
-The following assume you will be installing macOS Catalina 10.15.3, but should be compatible with 10.15.4.
+The following work with macOS Catalina up to 10.15.4.
 
 ### SETUP UEFI/BIOS
 
 * Update the BIOS to the latest version (as of this writing, **F11c**).
-* Follow [this guide](https://desktop.dortania.ml/extras/msr-lock.html) to unlock CFG Lock.
 * In the BIOS, first *Load Optimized Default Settings*
 * Go through the following and make the same changes:
 
@@ -67,7 +63,6 @@ The following assume you will be installing macOS Catalina 10.15.3, but should b
   - Advanced CPU Settings  
     - Hyper-Threading Technology - Enabled  
     - VT-d - Disabled  
-  - Extreme Memory Profile - Profile 1
 
 - Settings
   - Platform Power  
@@ -75,10 +70,10 @@ The following assume you will be installing macOS Catalina 10.15.3, but should b
     - ErP - Enabled  
 
   - IO Ports  
-    - Initial Display Output - IGFX  
+    - Initial Display Output - IGFX (for iGPU) or PCIe 1/2 (whichever slot holds your dGPU)   
     - Internal Graphics - Enabled  
     - DVMT Pre-allocated - 64M  
-    - DVMT Total Gfx Mem - MAX  
+    - DVMT Total Gfx Mem - 256M  
     - WiFi - Disabled  
     - Above 4G Decoding - Enabled  
     - USB Configuration  
@@ -104,10 +99,7 @@ The following assume you will be installing macOS Catalina 10.15.3, but should b
     - Secure Boot Enable - Disabled  
 
 * Save & Exit Setup.
-
-### OVERCLOCK
-
-I followed [this guide](https://forums.bit-tech.net/index.php?threads/9900k-5ghz-1-2v-guide-gigabyte-z390-master.353729/) to reach 5GHz and can recommend these tweaks.
+* Follow [this guide](https://desktop.dortania.ml/extras/msr-lock.html) to unlock CFG Lock. Remember that loading the default settings again will flip the CFG Lock back.
 
 ### CREATING THE INSTALLER
 
@@ -115,40 +107,31 @@ Follow the [OpenCore Vanilla guide](https://desktop.dortania.ml/installer-guide/
 
 ### CONFIGURING OPENCORE
 
-#### EASY WAY
-
 1. Mount the flash disk's EFI partition using `MountEFI`.
 2. Dump the contents of [EFI](./EFI) on there.
-3. Follow the macOS setup steps from the OpenCore Vanilla guide.
-4. After install, mount the internal disk's EFI partition.
-5. Dump the same contents there.
+3. From the [configs](./configs) folder, grab either the Intel iGPU or the Navi dGPU plist, depending on hardware.
+4. Rename your selection to `config.plist` and place inside `EFI/OC/` on the flash disk.
+5. Edit the `config.plist` to add the following values inside `PlatformInfo > Generic`: **MLB**, **ROM**, **SystemSerialNumber** and **SystemUUID**. These must be [generated with `GenSMBIOS`](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#platforminfo)!
+4. Follow the macOS setup steps from the OpenCore Vanilla guide.
+5. After install, mount the internal disk's EFI partition.
+6. Dump the same contents there.
 
-If your setup is identical to mine, odds are you won't need to mess with KALSR slide values, as the one in `config.plist` will work. If boot stops with an error like `Couldn't allocate runtime area`, [please follow this guide](https://desktop.dortania.ml/extras/kaslr-fix.html) to understand what you need to do.
+If your setup is identical to mine, odds are you won't need to mess with KALSR slide values. If boot stops with an error like `Couldn't allocate runtime area`, [please follow this guide](https://desktop.dortania.ml/extras/kaslr-fix.html) to understand what you need to do.
 
 If the iGPU isn't outputting anything, you may need to follow Headkaze's [Intel Framebuffer Patching Guide](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). It took me 14 reboots until I found the right combo, so don't stress.
 
-The only change needed with the `EFI` files is to add SMBIOS information to the `config.plist`. Use `GenSMBIOS` to generate `iMac19,1` information, validate it on the Apple Service & Coverage portal and edit the files using `ProperTree`. The three values that need editing are under `PlatformInfo -> Generic`: `MLB`, `SystemSerialNumber` and `SystemUUID`. 
-
-#### HARD WAY
-
-1. Read through the [OpenCore Vanilla Desktop Guide](https://desktop.dortania.ml/) in its entirety.
-2. Read through [this guide](https://acpi.dortania.ml/) to understand how to patch your SSDTs.
-
 #### VERSIONS USED AT TIME OF WRITING
 
-- OpenCore w/ OpenCanopy **0.5.7 RELEASE**
-- AppleSupportPkg **2.1.6 RELEASE** (`ApfsDriverLoader.efi`)
-- VirtualSMC **1.1.2 RELEASE** (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)
-- Lilu **1.4.3 RELEASE**
-- WhateverGreen **1.3.8 RELEASE**
-- IntelMausi **1.0.2 RELEASE**
-- AppleALC **1.4.8 RELEASE**
-- custom USBPorts.kext, a mix of [AudioGod's](https://www.insanelymac.com/forum/topic/340936-audiogods-aorus-z390-master-patched-dsdt-efi-for-catalina-mini-guide-and-discussion/) work and [cmer's](https://github.com/cmer) mapping.
+- OpenCore **0.5.7 DEBUG**  
+- AppleSupportPkg **2.1.6 RELEASE** (`ApfsDriverLoader.efi`)  
+- VirtualSMC **1.1.2 RELEASE** (`VirtualSMC.kext`, `SMCProcessor.kext` & `SMCSuperIO.kext`)  
+- Lilu **1.4.3 RELEASE**  
+- WhateverGreen **1.3.8 RELEASE**  
+- IntelMausi **1.0.2 RELEASE**  
+- AppleALC **1.4.8 RELEASE**  
+- NVMeFix **1.0.2 RELEASE**  
+- USBMap.kext, courtesy of [cmer](https://github.com/cmer)  
 
 ## USB PORT MAP & SSDT
 
 See [this document](USB_MAP.md) for a map of all the ports on the Z390 Aorus Master made by **cmer**.
-
-## LAZY?
-
-You are welcome to use my setup in its entirety, but set the needed SMBIOS values in `config.plist`.
