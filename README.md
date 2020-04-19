@@ -1,5 +1,5 @@
 # OpenCore-based macOS Catalina Guide
-## Gigabyte Z390 Aorus Master / Intel Core i9-9900K
+## Gigabyte Z390 Aorus Master / Intel Core i9-9900K / iGPU or Navi dGPU
 
 This is a vanilla build using [this blog post](https://infinitediaries.net/my-2020-hackintosh-hardware-spec/) as a hardware reference and following the [OpenCore guide.](https://desktop.dortania.ml/)
 
