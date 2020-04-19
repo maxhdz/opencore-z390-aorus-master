@@ -19,7 +19,7 @@ Fully working.
 - Gigabyte Z390 Aorus Master (BIOS F11c)  
 - Intel Core i9-9900K  
 - 64GB Kingston HyperX Fury DDR4 CL16 3200MHz  
-- Gigabyte Aorus 5700XT Gaming 8GB
+- Gigabyte Aorus Radeon 5700XT Gaming 8GB
 - Samsung 970 EVO Plus NVMe M.2 1TB & 500GB  
 - fenvi T919 (BCM94360CD) WiFi & BT 4.0  
 
@@ -103,7 +103,7 @@ The following work with macOS Catalina up to 10.15.4.
 
 ### CREATING THE INSTALLER
 
-Follow the [OpenCore Vanilla guide](https://desktop.dortania.ml/installer-guide/opencore-efi.html). It has instructions that can be followed in both macOS and Windows.
+Follow the [OpenCore Vanilla guide](https://dortania.github.io/OpenCore-Desktop-Guide/installer-guide/). It has instructions that can be followed in both macOS and Windows.
 
 ### CONFIGURING OPENCORE
 
@@ -111,7 +111,7 @@ Follow the [OpenCore Vanilla guide](https://desktop.dortania.ml/installer-guide/
 2. Dump the contents of [EFI](./EFI) on there.
 3. From the [configs](./configs) folder, grab either the Intel iGPU or the Navi dGPU plist, depending on hardware.
 4. Rename your selection to `config.plist` and place inside `EFI/OC/` on the flash disk.
-5. Edit the `config.plist` to add the following values inside `PlatformInfo > Generic`: **MLB**, **ROM**, **SystemSerialNumber** and **SystemUUID**. These must be [generated with `GenSMBIOS`](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#platforminfo)!
+5. Edit the `config.plist` to add the following values inside `PlatformInfo > Generic`: **MLB** (Board Serial), **ROM** (your built-in Ethernet's MAC address with no colons), **SystemSerialNumber** (Serial) and **SystemUUID** (SmUUID). These must be [generated with `GenSMBIOS`](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#platforminfo)! The values inside brackets are the name you'll find them under in GenSMBIOS.
 4. Follow the macOS setup steps from the OpenCore Vanilla guide.
 5. After install, mount the internal disk's EFI partition.
 6. Dump the same contents there.
@@ -131,6 +131,8 @@ If the iGPU isn't outputting anything, you may need to follow Headkaze's [Intel 
 - AppleALC **1.4.8 RELEASE**  
 - NVMeFix **1.0.2 RELEASE**  
 - USBMap.kext, courtesy of [cmer](https://github.com/cmer)  
+
+Note that I am using a DEBUG version of OpenCore and the `*.plist` files are configured to show useful debug information. This will be invaluable if the system has any issues down the line. 
 
 ## USB PORT MAP & SSDT
 
