@@ -120,6 +120,24 @@ If your setup is identical to mine, odds are you won't need to mess with KALSR s
 
 If the iGPU isn't outputting anything, you may need to follow Headkaze's [Intel Framebuffer Patching Guide](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). It took me 14 reboots until I found the right combo, so don't stress.
 
+### DUAL BOOTING
+
+To dual boot macOS & Windows 10, I chose [rEFInd](https://www.rodsbooks.com/refind/) as a boot manager (note, that's **manager** and not **loader**).  
+
+I had macOS installed when I added Windows 10 to a second SSD. Even though this was a completely separate drive to the one holding macOS, the Windows installer added its files to the EFI partition on the first drive and set itself as the default. This is actually helpful!
+
+To set up rEFInd as your boot manager:
+1. Mount the EFI partition.  
+2. Copy [refind](./refind) inside the `/EFI/` folder on the partition, so that you see `/EFI/OC` and `/EFI/refind` on the same level.  
+3. Depending on the OS that is currently booted:  
+  a. **Windows 10**: Open a Command Prompt as Adminitrator and type: `bcdedit /set "{bootmgr}" path \EFI\refind\refind_x64.efi`  
+  b. **macOS**: Open Terminal.app and type: `sudo bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/efi/refind/refind_x64.efi --shortform`  
+4. Restart and you should see the rEFInd picker. The maCOS option will transfer you to OpenCore while the Windows option will boot Windows 10 directly.
+
+For more in-depth installation instructions, please see the [rEFInd website.](https://www.rodsbooks.com/refind/installing.html)  
+
+If your system clock is different when booting between the two operating systems, follow [these instructions](https://www.tonymacx86.com/threads/fix-incorrect-time-in-windows-osx-dual-boot.133719/) to fix.
+
 #### VERSIONS USED AT TIME OF WRITING
 
 - OpenCore **0.5.7 DEBUG**  
