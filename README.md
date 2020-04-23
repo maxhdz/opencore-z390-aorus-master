@@ -106,14 +106,14 @@ Follow the [OpenCore Vanilla guide](https://dortania.github.io/OpenCore-Desktop-
 
 ### CONFIGURING OPENCORE
 
-1. Mount the flash disk's EFI partition using `MountEFI`.
-2. Dump the contents of [EFI](./EFI) on there.
-3. From the [configs](./configs) folder, grab either the Intel iGPU or the Navi dGPU plist, depending on hardware.
-4. Rename your selection to `config.plist` and place inside `EFI/OC/` on the flash disk.
-5. Edit the `config.plist` to add the following values inside `PlatformInfo > Generic`: **MLB** (Board Serial), **ROM** (your built-in Ethernet's MAC address with no colons), **SystemSerialNumber** (Serial) and **SystemUUID** (SmUUID). These must be [generated with `GenSMBIOS`](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#platforminfo)! The values inside brackets are the name you'll find them under in GenSMBIOS.
-4. Follow the macOS setup steps from the OpenCore Vanilla guide.
-5. After install, mount the internal disk's EFI partition.
-6. Dump the same contents there.
+1. Mount the flash disk's EFI partition using `MountEFI`.  
+2. Dump the entirety of [EFI](./EFI) on there. The folder shall be on the root of the EFI partition.  
+3. From the [configs](./configs) folder, grab either the Intel iGPU or the Navi dGPU plist, depending on hardware.  
+4. Rename your selection to `config.plist` and place inside `/EFI/OC/` on the flash disk.  
+5. Edit the `config.plist` to add the following values inside `PlatformInfo > Generic`: **MLB** (Board Serial), **ROM** (your built-in Ethernet's MAC address with no colons), **SystemSerialNumber** (Serial) and **SystemUUID** (SmUUID). These must be [generated with `GenSMBIOS`](https://dortania.github.io/OpenCore-Desktop-Guide/config.plist/coffee-lake.html#platforminfo)! The values inside brackets are the names you'll find them under in GenSMBIOS.  
+4. Follow the macOS setup steps from the OpenCore Vanilla guide.  
+5. After install, mount the internal disk's EFI partition.  
+6. Dump the same contents there.  
 
 If your setup is identical to mine, odds are you won't need to mess with KALSR slide values. If boot stops with an error like `Couldn't allocate runtime area`, [please follow this guide](https://desktop.dortania.ml/extras/kaslr-fix.html) to understand what you need to do.
 
@@ -129,7 +129,7 @@ To set up rEFInd as your boot manager:
 1. Mount the EFI partition.  
 2. Copy [refind](./refind) inside the `/EFI/` folder on the partition, so that you see `/EFI/OC` and `/EFI/refind` on the same level.  
 3. Depending on the OS that is currently booted:  
-  a. **Windows 10**: Open a Command Prompt as Adminitrator and type: `bcdedit /set "{bootmgr}" path \EFI\refind\refind_x64.efi`  
+  a. **Windows 10**: Open a Command Prompt as Administrator and type: `bcdedit /set "{bootmgr}" path \EFI\refind\refind_x64.efi`  
   b. **macOS**: Open Terminal.app and type: `sudo bless --mount /Volumes/ESP --setBoot --file /Volumes/ESP/efi/refind/refind_x64.efi --shortform`  
 4. Restart and you should see the rEFInd picker. The maCOS option will transfer you to OpenCore while the Windows option will boot Windows 10 directly.
 
@@ -151,6 +151,6 @@ If your system clock is different when booting between the two operating systems
 
 Note that I am using a DEBUG version of OpenCore and the `*.plist` files are configured to show useful debug information. This will be invaluable if the system has any issues down the line. 
 
-## USB PORT MAP & SSDT
+## USB PORT MAP
 
 See [this document](USB_MAP.md) for a map of all the ports on the Z390 Aorus Master made by **cmer**.
