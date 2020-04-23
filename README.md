@@ -21,7 +21,6 @@ Fully working.
 - 64GB Kingston HyperX Fury DDR4 CL16 3200MHz  
 - Gigabyte Aorus Radeon 5700XT Gaming 8GB
 - Samsung 970 EVO Plus NVMe M.2 1TB & 500GB  
-- fenvi T919 (BCM94360CD) WiFi & BT 4.0  
 
 ### ASSEMBLY TIPS
 
@@ -40,9 +39,9 @@ Fully working.
 ### NOT WORKING
 
 - Built-in WiFi. This will likely never work and is disabled from BIOS.
-- Onboard BT (HS14 in the USB map) is disabled alongside the built-in WiFI as it conflicts with the fenvi add-in card.
+- Onboard BT (HS14 in the USB map) is disabled alongside the built-in WiFI as it conflicts with any add-in card.
 
-Please use an add-in card for these.
+Please use an add-in card for these. I no longer recommend the fenvi T919 as many users across reddit and in Amazon reviews have reported conflicts with Z390 motherboards.
 
 ### WON'T TEST
 
@@ -136,7 +135,7 @@ To set up rEFInd as your boot manager:
 
 For more in-depth installation instructions, please see the [rEFInd website.](https://www.rodsbooks.com/refind/installing.html)  
 
-If your system clock is different when booting between the two operating systems, follow [these instructions](https://www.tonymacx86.com/threads/fix-incorrect-time-in-windows-osx-dual-boot.133719/) to fix.
+If your system clock is different when booting between the two operating systems, follow [these instructions](https://www.tonymacx86.com/threads/fix-incorrect-time-in-windows-osx-dual-boot.133719/) to have UTC time on both operating systems.
 
 #### VERSIONS USED AT TIME OF WRITING
 
